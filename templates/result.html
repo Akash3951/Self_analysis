@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Table Display</title>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      /* Center the table */
+      .table-container {
+        width: 50%; /* Adjust the width as needed */
+        margin: 0 auto; /* Center the table horizontally */
+        overflow-y: auto; /* Add vertical scroll for overflow */
+      }
+
+      table {
+        border-collapse: collapse;
+        width: 100%; /* Table width */
+      }
+
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>RESULTS</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            {% for header in headers %}
+            <th>{{ header }}</th>
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          {% for row in data %}
+          <tr>
+            {% for item in row %}
+            <td>{{ item }}</td>
+            {% endfor %}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

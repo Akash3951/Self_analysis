@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- ... (your meta tags and title) ... -->
+    <link rel="stylesheet" href="{{url_for('static', filename='style.css')}}" />
+  </head>
+  <body>
+    <h1 class="page-title">Update Yourself</h1>
+    <div class="form-container">
+      <form action="/submit" method="POST">
+        <label for="date">Date:</label>
+        <input type="date" id="date" name="date" />
+        <br /><br />
+        <label for="morning">Morning</label>
+        <input
+          type="number"
+          placeholder="Enter marks"
+          id="morning"
+          name="morning"
+        />
+        <br /><br />
+        <label for="afternoon">Afternoon</label>
+        <input
+          type="number"
+          placeholder="Enter marks"
+          id="afternoon"
+          name="afternoon"
+        />
+        <br /><br />
+        <label for="evening">Evening</label>
+        <input
+          type="number"
+          placeholder="Enter marks"
+          id="evening"
+          name="evening"
+        />
+        <br /><br />
+        <input type="submit" value="Submit" />
+        <input type="button" value="Result" onclick="getResult()" />
+      </form>
+    </div>
+    <footer>
+      <label for="current-average">Current Average:</label>
+      <output id="current-average-value">{{curr_avg}}%</output>
+    </footer>
+
+    <script>
+      function getResult() {
+        window.location.href = "/result";
+      }
+    </script>
+  </body>
+</html>
